@@ -6,35 +6,19 @@ import (
 )
 
 func ExampleTotal() {
-	fmt.Println(Total([]types.Card{
+	fmt.Println(PaymentSource([]types.Card{
 		{
-			Balance: 1_000_00,
-			Active:  true,
-		},
-	}))
-	fmt.Println(Total([]types.Card{
-		{
-			Balance: 1_000_00,
+			PAN: "5500 xxxx xxxx 3330",
+			Balance: 1_000,
 			Active:  true,
 		},
 		{
-			Balance: 2_000_00,
-			Active:  true,
-		},
-	}))
-	fmt.Println(Total([]types.Card{
-		{
-			Balance: 1_000_00,
-			Active:  false,
-		},
-		{
-			Balance: -1_000_00,
+			PAN: "5500 xxxx xxxx 3332",
+			Balance: 2_000,
 			Active:  true,
 		},
 	}))
 
 	// 	Output:
-	// 100000
-	// 300000
-	// 0
+	// 950
 }
